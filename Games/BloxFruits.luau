@@ -1,4 +1,4 @@
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/salo345/Solo-Library-ui-refs-heads-main/refs/heads/main/Solohubui.lua"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/gsolo3333/Library/refs/heads/main/V5/Source.lua"))()
 
 
 local AFKOptions = {}
