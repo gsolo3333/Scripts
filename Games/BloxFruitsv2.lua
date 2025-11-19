@@ -33,4 +33,5 @@ Window:Notify({
      Content = "this is a Notification",
      Image = "rbxassetid://10734953451",
      Duration = 5
+  end
 })
