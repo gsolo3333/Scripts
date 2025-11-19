@@ -27,3 +27,11 @@ Window:Notify({
   Duration = 5
 })
 
+Window:Notify({
+  if Sea == 1 then
+      Title = "Notification",
+      Content = "this is a Notification", 
+      Image = "rbxassetid://10734953451",
+      Duration = 5
+  end
+})
