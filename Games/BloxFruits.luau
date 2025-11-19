@@ -50,7 +50,7 @@ function(Value)
    task.spawn(function()
      while getgenv().TeleportToIsland do task.wait()
        local Island = getgenv().TeleportIslandSelect
-       if Sea1 then
+       if workspace.MAP == "Sea1" then
          -- Sea 1 Teleports
          if Island == "Middle Town" then
            PlayerTP(CFrame.new(-688, 15, 1585))
@@ -85,7 +85,7 @@ function(Value)
   elseif Island == "Fountain City" then
     PlayerTP(CFrame.new())
   end
-elseif Sea2 then
+elseif workspace.MAP == "Sea2" then
   -- Sea 2 Teleports
   if Island == "The Cafe" then
     PlayerTP(CFrame.new(-382, 73, 290))
@@ -114,7 +114,7 @@ elseif Sea2 then
   elseif Island == "Ussop Island" then
     PlayerTP(CFrame.new(4816, 8, 2863))
   end
-elseif Sea3 then
+elseif workspace.MAP == "Sea2" then
   -- Sea 3 Teleports
   if Island == "Mansion" then
     PlayerTP(CFrame.new(-12471, 374, -7551))
