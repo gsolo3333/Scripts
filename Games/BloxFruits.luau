@@ -54,11 +54,49 @@ Misc:AddToggle({
 })
 
 local SpeedToggleValue = Window:GetFlag("toggle_flag") or false
+local SpeedEnabled = SpeedToggleValue
 
-Tab:AddToggle({
+Misc:AddToggle({
   Name = "Speed",
   Default = SpeedToggleValue,
   Callback = function(Value)
     Window:SetFlag("speed_flag", Value)
+    SpeedEnabled = Value
   end
 })
+
+Misc:AddSlider({
+    Name = "Speed value",
+    Min = 1,
+    Max = 100,
+    Increase = 1,
+    Default = 16,
+    Callback = function(Value)
+      if SpeedEnabled == true then
+        game.Players.LocalPlayer.Character: SetAttribute("SpeedMultiplier", Value)
+      end
+    end
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
