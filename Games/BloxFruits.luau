@@ -53,7 +53,7 @@ Misc:AddToggle({
   Flag = "speed_flag"
 })
 
-local SpeedToggleValue = Window:GetFlag("toggle_flag") or false
+local SpeedToggleValue = Window:GetFlag("speed_flag") or false
 local SpeedEnabled = SpeedToggleValue
 
 Misc:AddToggle({
