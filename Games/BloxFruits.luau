@@ -167,6 +167,18 @@ if Sea3 then
       Player.Character:SetPrimaryPartCFrame(CFrame.new(28286, 14897, 103))
     end
   end})
+
+
+Misc:AddSlider({
+  Name = "Speed",
+  Min = 1,
+  Max = 350,
+  Increase = 1,
+  Default = 16,
+  Callback = function(Value)
+  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
 end
 
 
