@@ -48,11 +48,6 @@ local Misc = Window:MakeTab({"Misc", "Settings"})
 --teleport--
 
 
-Misc:AddToggle({
-  Name = "Speed",
-  Flag = "speed_flag"
-})
-
 local SpeedToggleValue = Window:GetFlag("speed_flag") or false
 local SpeedEnabled = SpeedToggleValue
 
@@ -72,7 +67,6 @@ Misc:AddSlider({
     Increase = 1,
     Default = 16,
     Callback = function(Value)
-      SpeedEnabled = false
       if SpeedEnabled == true then
         game.Players.LocalPlayer.Character: SetAttribute("SpeedMultiplier", Value)
       end
