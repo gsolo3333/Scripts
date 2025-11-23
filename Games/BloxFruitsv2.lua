@@ -1010,9 +1010,7 @@ plrPP.Position).Magnitude < 3000 then
 
         while getgenv().AutoFarmRaid do task.wait()
           if Configure("Raid") then
-          else
-            if not Player.PlayerGui.Main.Timer.Visible and VerifyTool("Special
-Microchip") then
+            if not Player.PlayerGui.Main.Timer.Visible and VerifyTool("SpecialMicrochip") then
                if not GetIsland("Island 1")
                and not GetIsland("Island 2")
                and not GetIsland("Island 3")
