@@ -159,42 +159,35 @@ TPToggle:Callback(function(Value)
   end
 end)
 
-Misc:AddSlider({"Farm Distance", 5, 30, 1, 20, function(Value)
-  getgenv().FarmPos = Vector3.new(0, Value or 15, Value or 10)getfenv().FarmDistance = Value
-end, "Misc/FarmDistance"})
 
-Misc:AddSlider({"Tween Speed", 50, 300, 5, 170, function(Value)
-  getfenv().TweenSpeed = Value
-end, "Misc/TweenSpeed"})
+local ToggleValue = Window:GetFlag("toggle_flag") or false
+local SpeedEnabled = ToggleValue  -- حالة التوغل باش نعرف واش نفعل السلايدر ولا لا
 
-Misc:AddSlider({"Bring Mobs Distance", 50, 500, 10, 250, function(Value)
-  getfenv().BringMobsDistance = Value or 250
-end, "Misc/BringMobsDistance"})
+Misc:AddToggle({
+    Name = "Run_Speed",
+    Default = ToggleValue,
+    Callback = function(Value)
+        Window:SetFlag("toggle_flag", Value)
+        SpeedEnabled = Value   -- تخزين الحالة
 
-Misc:AddSlider({"Auto Click Delay", 0.15, 1, 0.01, 0.2, function(Value)
-  getfenv().AutoClickDelay = Value
-end, "Misc/AutoClickDelay"})
+        if Value then
+            print("Speed Slider Enabled")
+        else
+            print("Speed Slider Disabled")
+        end
+    end
+})
 
-Misc:AddToggle({"Fast Attack", true, function(Value)
-  getfenv().FastAttack = Value
-end, "Misc/FastAttack"})
-
-Misc:AddToggle({"Increase Attack Distance", true, function(Value)
-  getfenv().AttackDistance = Value
-  task.spawn(AttackDistance)
-end, "Misc/IncreaseAttackDistance"})
-
-Misc:AddToggle({"Auto Click", true, function(Value)
-  getfenv().AutoClick = Value
-end, "Misc/AutoClick"})
-
-Misc:AddToggle({"Bring Mobs", true, function(Value)
-  getfenv().BringMobs = Value
-end, "Misc/BringMobs"})
-
-Misc:AddToggle({"Auto Haki", true, function(Value)
-  getfenv().AutoHaki = Value
-end, "Misc/AutoHaki"})
-
-
-
+Misc:AddSlider({
+    Name = "Speed",
+    Min = 1,
+    Max = 100,
+    Increase = 1,
+    Default = 16,
+    Callback = function(Value)
+        -- السلايدر لا يعمل إلا إذا كان SpeedEnabled = true
+        if SpeedEnabled == true then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end
+    end
+})
