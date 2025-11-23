@@ -10,7 +10,7 @@ local Window = redzlib:MakeWindow({
 })
 
 Window:AddMinimizeButton({
-  Button = { Image = "rbxassetid://15298567397", BackgroundTransparency = 0 },
+  Button = { Image = "rbxassetid://118438786071945", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0.01, 0.01) },
 })
 
