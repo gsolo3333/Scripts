@@ -159,18 +159,8 @@ TPToggle:Callback(function(Value)
   end
 end)
 
-if Sea3 then
-  Teleport:AddSection({"Race V4"})
-
-  Teleport:AddButton({"Teleport To Temple of Time", function()
-    for i = 1, 5 do task.wait()
-      Player.Character:SetPrimaryPartCFrame(CFrame.new(28286, 14897, 103))
-    end
-  end})
-
 Misc:AddSlider({"Farm Distance", 5, 30, 1, 20, function(Value)
-  getgenv().FarmPos = Vector3.new(0, Value or 15, Value or
-10)getgenv().FarmDistance = Value
+  getgenv().FarmPos = Vector3.new(0, Value or 15, Value or 10)getgenv().FarmDistance = Value
 end, "Misc/FarmDistance"})
 
 Misc:AddSlider({"Tween Speed", 50, 300, 5, 170, function(Value)
