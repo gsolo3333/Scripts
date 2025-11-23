@@ -1,5 +1,4 @@
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/gsolo3333/Library/refs/heads/main/V5/Source.lua"))()
-
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/gsolo3333/Library/refs/heads/main/solo-V5-remake/main.luau"))()
 
 local AFKOptions = {}
 
