@@ -72,6 +72,7 @@ Misc:AddSlider({
     Increase = 1,
     Default = 16,
     Callback = function(Value)
+      SpeedEnabled = false
       if SpeedEnabled == true then
         game.Players.LocalPlayer.Character: SetAttribute("SpeedMultiplier", Value)
       end
