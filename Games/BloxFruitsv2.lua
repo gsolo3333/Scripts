@@ -1022,8 +1022,7 @@ plrPP.Position).Magnitude < 3000 then
 fireclickdetector(workspace.Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
                        repeat task.wait()until GetIsland("Island 1")task.wait(1)
                     elseif Sea3 then
-                       fireclickdetector(workspace.Map["Boat
-Castle"].RaidSummon2.Button.Main.ClickDetector)
+                       fireclickdetector(workspace.Map["BoatCastle"].RaidSummon2.Button.Main.ClickDetector)
                        repeat task.wait()until GetIsland("Island 1")task.wait(1)
                     end
                   end)
