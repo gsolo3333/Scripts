@@ -7,6 +7,8 @@ local Window = redzlib:MakeWindow({
 
 local AFKOptions = {}
 
+
+
 local Discord = Window:MakeTab({"Discord", "Info"})
 Discord:AddDiscordInvite({
    Name = "redz Hub | Community",
