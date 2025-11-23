@@ -48,39 +48,17 @@ local Misc = Window:MakeTab({"Misc", "Settings"})
 --teleport--
 
 
-Tab:AddToggle({
-  Name = "Cool Toggle",
-  Flag = "toggle_flag"
-})
-
-local ToggleValue = Window:GetFlag("toggle_flag") or false
-local SpeedEnabled = ToggleValue  -- حالة التوغل باش نعرف واش نفعل السلايدر ولا لا
-
 Misc:AddToggle({
-    Name = "Run_Speed",
-    Default = ToggleValue,
-    Callback = function(Value)
-        Window:SetFlag("toggle_flag", Value)
-        SpeedEnabled = Value   -- تخزين الحالة
-
-        if Value then
-            print("Speed Slider Enabled")
-        else
-            print("Speed Slider Disabled")
-        end
-    end
+  Name = "Speed",
+  Flag = "speed_flag"
 })
 
-Misc:AddSlider({
-    Name = "Speed",
-    Min = 1,
-    Max = 100,
-    Increase = 1,
-    Default = 16,
-    Callback = function(Value)
-        -- السلايدر لا يعمل إلا إذا كان SpeedEnabled = true
-        if SpeedEnabled == true then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-        end
-    end
+local SpeedToggleValue = Window:GetFlag("toggle_flag") or false
+
+Tab:AddToggle({
+  Name = "Speed",
+  Default = SpeedToggleValue,
+  Callback = function(Value)
+    Window:SetFlag("speed_flag", Value)
+  end
 })
