@@ -168,19 +168,43 @@ if Sea3 then
     end
   end})
 
+Misc:AddSlider({"Farm Distance", 5, 30, 1, 20, function(Value)
+  getgenv().FarmPos = Vector3.new(0, Value or 15, Value or
+10)getgenv().FarmDistance = Value
+end, "Misc/FarmDistance"})
 
-Misc:AddSlider({
-  Name = "Speed",
-  Min = 1,
-  Max = 350,
-  Increase = 1,
-  Default = 16,
-  Callback = function(Value)
-  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-  end
-})
-end
+Misc:AddSlider({"Tween Speed", 50, 300, 5, 170, function(Value)
+  getgenv().TweenSpeed = Value
+end, "Misc/TweenSpeed"})
 
+Misc:AddSlider({"Bring Mobs Distance", 50, 500, 10, 250, function(Value)
+  getgenv().BringMobsDistance = Value or 250
+end, "Misc/BringMobsDistance"})
+
+Misc:AddSlider({"Auto Click Delay", 0.15, 1, 0.01, 0.2, function(Value)
+  getgenv().AutoClickDelay = Value
+end, "Misc/AutoClickDelay"})
+
+Misc:AddToggle({"Fast Attack", true, function(Value)
+  getgenv().FastAttack = Value
+end, "Misc/FastAttack"})
+
+Misc:AddToggle({"Increase Attack Distance", true, function(Value)
+  getgenv().AttackDistance = Value
+  task.spawn(AttackDistance)
+end, "Misc/IncreaseAttackDistance"})
+
+Misc:AddToggle({"Auto Click", true, function(Value)
+  getgenv().AutoClick = Value
+end, "Misc/AutoClick"})
+
+Misc:AddToggle({"Bring Mobs", true, function(Value)
+  getgenv().BringMobs = Value
+end, "Misc/BringMobs"})
+
+Misc:AddToggle({"Auto Haki", true, function(Value)
+  getgenv().AutoHaki = Value
+end, "Misc/AutoHaki"})
 
 
 
