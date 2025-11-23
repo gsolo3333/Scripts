@@ -10,7 +10,7 @@ local Window = redzlib:MakeWindow({
 })
 
 Window:AddMinimizeButton({
-  Button = { Image = "rbxassetid://118438786071945", BackgroundTransparency = 0 },
+  Button = { Image = "rbxassetid://104933276010603", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0.01, 0.01) },
 })
 
@@ -22,7 +22,7 @@ local Discord = Window:MakeTab({"Discord", "Info"})
 Discord:AddDiscordInvite({
   Name = "solo Hub | Community",
   Description = "Join our discord community to receive information about the next update",
-  Logo = "rbxassetid://15298567397",
+  Logo = "rbxassetid://104933276010603",
   Invite = "https://discord.gg/7aR7kNVt4g"
 })
 --end discord
