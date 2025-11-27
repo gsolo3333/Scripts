@@ -1,10 +1,11 @@
 local _ENV = (getgenv or getrenv or getfenv)()
 local BETA_VERSION = BETA_VERSION or _ENV.BETA_VERSION
+local REMAK_VERSION = REMAK_VERSION or _ENV.REMAK_VERSION
 
 local Scripts = {
 	{
 		GameId = 994732206,
-		UrlPath = if BETA_VERSION then "BLOX-FRUITS-BETA.lua" else "BloxFruits.luau"
+		UrlPath = if BETA_VERSION then "BLOX-FRUITS-BETA.lua" elseif REMAK_VERSION then "BloxFruitsv2.lua" else "BloxFruits.luau"
 	},
 	{
 		PlacesIds = {10260193230},
@@ -52,7 +53,11 @@ do
 		if BETA_VERSION then
 			SourceCode = "getgenv().BETA_VERSION=true;" .. SourceCode
 		end
-		
+			
+		if REMAK_VERSION then
+			SourceCode = "getgenv().REMAK_VERSION=true;" .. SourceCode
+		end
+			
 		pcall(queueteleport, SourceCode)
 	end
 end
